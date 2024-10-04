@@ -1,0 +1,28 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = "mainLayout.cshtml";
+	ViewBag.Title = Model.Value("pageTitle")
+}
+
+<div class="container">
+	<h1>@ViewBag.Title</h1>
+	<form onsubmit="handleContactFormSubmit(event)" novalidate>
+		<div class="form-input-group">
+			<label class="form-label" for="name">Name</label>
+			<input id="name" name="name" type="text" placeholder="Enter your name" class="form-input">
+			<span class="form-input-error">You must enter your name</span>
+		</div>
+		<div class="form-input-group">
+			<label class="form-label" for="email">Email address</label>
+			<input id="email" name="email" type="email" placeholder="enter your email addres" class="form input">
+			<span class="form-input-error">you must enter a vailid email</span>
+		</div>
+		<div class="form-input-group">
+			<label class="form-label" for="message">Message</label>
+			<textarea id="message" name="message" placeholder="enter your message..." class="form-textarea"></textarea>
+			<span class="form-input-error">you must enter a message></span>
+		</div>
+		<button type="submit" class="form-button btn-submit">SEND</button>
+	</form>
+</div>
